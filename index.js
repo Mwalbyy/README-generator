@@ -52,7 +52,7 @@ const generateReadMe = ({
   test,
 }) =>
   `
-    # ${title}
+# ${title}
 
 ![License](https://img.shields.io/badge/Licensed%20Under-${license}-blue)
 
@@ -96,7 +96,7 @@ const generateReadMe = ({
 `;
 const init = () => {
   promptUser().then((answers) =>
-    fs.writeFileSync(`README.md`, generateReadMe(answers))
+    fs.writeFileSync(`NEWREADME.md`, generateReadMe(answers))
   );
 };
 
