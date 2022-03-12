@@ -13,4 +13,4 @@ This program can be used to create profesinal looking <br>README without the has
 
 # Links
 
-[Video of how to use site]()
+[Video of how to use site](https://www.youtube.com/embed/ECWPm1zv_WM)
