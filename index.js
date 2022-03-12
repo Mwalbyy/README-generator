@@ -1,5 +1,7 @@
-const fs = require("fs");
-const inquirer = require("inquirer");
+const fs = require("fs")
+const inquirer = require("inquirer")
+
+
 
 const promptUser = () => {
   return inquirer.prompt([
@@ -12,7 +14,7 @@ const promptUser = () => {
       type: "checkbox",
       name: "license",
       message: "What license are you using?",
-      choices: ["MIT", "BSD", "ISC"],
+      choices: ["MIT", "NTP", "ISC"],
     },
     {
       type: "input",
@@ -49,7 +51,8 @@ const promptUser = () => {
         name: "email",
         message: "What is your email?",
     },
-  ]);
+    
+  ])
 };
 
 const generateReadMe = ({
@@ -62,14 +65,14 @@ const generateReadMe = ({
   test,
   github,
   email
-}) =>
+}) => 
   `
 # ${title}
 
 ![License](https://img.shields.io/badge/Licensed%20Under-${license}-blue)
 
 # Description
-### ${description}
+${description}
 # Table of Contents
 
 -[Installation](#installation)
@@ -82,25 +85,25 @@ const generateReadMe = ({
 <a href = 'installation'></a>
 
 # Installation:
-### ${installation}
+${installation}
 <a href = 'usage'></a>
 
 # Usage:
-### ${usage}
+${usage}
 <a href = 'license'></a>
 
 # License:
-### ${license}
+[Link to ${license}](https://opensource.org/licenses/${license})
 
 <a href = 'contributing'></a>
 
 # Contributing:
-### ${contribution}
+${contribution}
 
 <a href = 'tests'></a>
 
 # Tests:
-### ${test}
+${test}
 
 <a href = 'questions'></a>
 
@@ -113,8 +116,9 @@ const generateReadMe = ({
 `;
 const init = () => {
   promptUser().then((answers) =>
-    fs.writeFileSync(`NEWREADME.md`, generateReadMe(answers))
-  );
-};
+    fs.writeFileSync(`NEWREADME.md`, generateReadMe(answers)),
 
+    );
+};
 init();
+
